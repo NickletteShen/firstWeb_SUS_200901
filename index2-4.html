@@ -1,0 +1,92 @@
+<!-- 更改待办事件内容 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更改待办事件内容</title>
+    <style>
+        input{
+            display: none;
+        }
+        /* 当处于编辑模式时，span隐藏，input出现 */
+        .edit span{
+            display: none;
+        }
+        .edit input{
+            display: initial;
+        }
+    </style>
+</head>
+<body>
+    <main>CheckList</main>
+    <ul id="checkList">
+        <li>
+            <span>Apple</span>
+            <input value="Apple"/>
+        </li>
+        <li>
+            <span>MK</span>
+            <input value="MK"/>
+        </li>
+        <li>
+            <span>JK</span>
+            <input value="JK"/>
+        </li>
+        <li>
+            <span>UnderSun</span>
+            <input value="UnderSun"/>
+        </li>
+    </ul>
+</body>
+<script>
+    var checkList = document.getElementById('checkList');
+    var items = checkList.querySelectorAll('li');
+    // 一定要循环监听，才能监听全部li
+    for(var i=0;i<items.length;i++){
+        items[i].addEventListener('click',editItem);
+        // 不对！只能给input加失焦监听
+        // items[i].addEventListener('blur',updateItem);
+    }
+    function editItem(){
+            this.className='edit';
+            var input = this.querySelector('input');
+            //为什么要有focus？？？
+            input.focus()
+            // console.log(input.value)
+            input.setSelectionRange(0,input.value.length)
+        }
+    var input = checkList.querySelectorAll('input');
+    for(var i=0;i<input.length;i++){
+        input[i].addEventListener('blur',updateItem);
+        input[i].addEventListener('keypress',itemKeyPress);
+    }
+    function updateItem(){
+        this.previousElementSibling.innerHTML=this.value;
+        // 注意此时的this指的input，是li的子元素
+        this.parentNode.className='';
+        }
+    // 监听键盘按下回车事件
+    function itemKeyPress(event){
+        if(event.which===13){
+            updateItem.call(this)
+        }
+        console.log(this)
+    }
+</script>
+
+<!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(function(){
+        $('#checkList li').click(editItem)
+        function editItem(){
+            $(this).addClass('edit')
+        }
+        $('.edit').live('blur',updateItem)
+        function updateItem(){
+            alert('1')
+            $(this).removeClass('edit')
+        }
+    })
+</script> -->
+</html>

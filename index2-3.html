@@ -1,0 +1,54 @@
+<!-- 点击列表链接显示图片 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击列表链接显示图片</title>
+    <style>
+        .hide{
+            display: none;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h4>Pictures</h4>
+    <ul>
+        <li>
+            <a href="#" data-img="MK-pic" id="MK">MK包</a>
+        </li>
+        <li>
+            <a href="#" data-img="JK1-pic" id="JK1">JK1</a>
+        </li>
+        <li>
+            <a href="#" data-img="JK2-pic" id="JK2">JK2</a>
+        </li>
+        <li>
+            <a href="#" data-img="YG-pic" id="MK">阳光之下</a>
+        </li>
+    </ul>
+    <img class="hide" id="MK-pic" src="images/IMG_0911.jpg">
+    <img class="hide" id="JK1-pic" src="images/IMG_0994.JPG">
+    <img class="hide" id="JK2-pic" src="images/IMG_0995.PNG">
+    <img class="hide" id="YG-pic" src="images/IMG_1062.JPG">
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(function(){
+        $('a').on('click',function(){
+            var picId = $(this).attr('data-img');
+            if($('#'+picId).attr('class')==="hide"){
+                $('#'+picId).removeClass('hide');
+            }
+            else{
+                $('#'+picId).addClass('hide');
+            }
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,92 @@
+<!-- 漂亮的登陆界面 纯css -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漂亮的登陆界面</title>
+    <style>
+        .icon {
+          width: 2em;
+          height: 2em;
+          vertical-align: -0.95em;
+          fill: currentColor;
+          overflow: hidden;
+        }
+    </style>
+    <style>
+        body{
+            /* margin: 0;
+            padding: 0; */
+            background-image: url(/images/IMG_5585.JPG);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment:fixed
+        }
+
+        #bigBox{
+            margin:0 auto;
+            margin-top: 100px;
+            padding: 20px 50px;
+            background-color: #00000090;
+            width: 400px;
+            height: 300px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        #bigBox h1{
+            color: white;
+        }
+        #bigBox .inputBox{
+            margin-top: 50px;
+        }
+        #bigBox .inputBox .inputText{
+            margin-top: 20px;
+        }
+        #bigBox .inputBox .inputText input{
+            border: 0;
+            padding: 10px;
+            /* 有什么区别？ */
+            border-bottom: 1px solid white;
+            background-color: #00000000;
+            color: white;
+        }
+
+        #bigBox .inputBox .inputButton{
+            margin-top: 30px;
+            border: 0;
+            width: 150px;
+            height: 25px;
+            color: white;
+            border-radius: 30px;
+            background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+        }
+        #bigBox .inputBox span{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="bigBox">
+        <h1>LOGIN</h1>
+        <div class="inputBox">
+            <div class="inputText">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fuzi"></use>
+                </svg>
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="inputText">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-hongbao"></use>
+                </svg>
+                <input type="text" placeholder="Password">
+            </div>
+            <!-- 按钮为什么要用input？ -->
+            <input type="button" class="inputButton" value="LOGIN">
+        </div>
+    </div>
+</body>
+<script src='iconfont/font_kmrmsablgv/iconfont.js'></script>
+</html>

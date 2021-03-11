@@ -1,0 +1,106 @@
+<!-- jQ  Button控制Panel -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button控制Panel</title>
+    <style>
+        button{
+            border: 0;
+            margin-left: 40px;
+            padding: 10px 20px;
+            background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+            border-radius: 10px;
+        }
+        div.row{
+            padding: 0;
+            margin-left: 20px;
+            display: inline-block;
+            /* position: absolute; */
+            
+        }
+        .col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4{
+            margin: 18px;
+            border:1px solid green;
+            border-radius: 10px;
+
+            /* div并排显示 *//* float ？？收起来布局不对*/
+            float: left; 
+        }
+        .panel-heading{
+            /* padding: 10px 20px; */
+            margin: 0;
+            background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+            width: 80px;
+            height: 40px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+        }
+        .panel-body{
+            width: 80px;
+            height: 100px;
+            background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+            border-radius: 0 0 10px 10px;
+            text-align: center;
+        }
+        /* 默认不显示 */
+        .panel{
+            display: none;
+        }
+        .panel.panel-primary{
+            display: initial;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Let's Have Fun!</h1>
+            <button id="btn1" data-panel='panel1'>#btn1</button>
+            <button id="btn2" data-panel='panel2'>#btn2</button>
+            <button id="btn3" data-panel='panel3'>#btn3</button>
+            <button id="btn4" data-panel='panel4'>#btn4</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-1">
+            <div id="panel1" class="panel panel-primary">
+                <div class="panel-heading">#panel1</div>
+                <div class="panel-body">content1</div>
+            </div>
+        </div>
+
+        <div class="col-xs-2">
+            <div id="panel2" class="panel">
+                <div class="panel-heading">#panel2</div>
+                <div class="panel-body">content2</div>
+            </div>
+        </div>
+
+        <div class="col-xs-3">
+            <div id="panel3" class="panel">
+                <div class="panel-heading">#panel3</div>
+                <div class="panel-body">content3</div>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div id="panel4" class="panel">
+                <div class="panel-heading">#panel4</div>
+                <div class="panel-body">content4</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $('button').click(function(){
+        var $panelId = $(this).attr('data-panel');
+        $('.panel').removeClass('panel-primary')
+        $('#'+$panelId).toggle(300);
+        $('#'+$panelId).addClass('panel-primary');
+    })
+</script>
+</html>

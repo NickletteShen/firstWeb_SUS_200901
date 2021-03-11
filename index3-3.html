@@ -1,0 +1,101 @@
+<!-- JQ 轮播图 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+        .slider{
+            height: 200px;
+            width: 200px;
+            /* 4组图片，只显示第1组，其他超出范围隐藏 */
+            overflow: hidden;
+            /* 解决li img有空隙的问题 */
+            font-size: 0;
+            /* div居中 */
+            margin: 50px auto;
+        }
+        .slides{
+            list-style-type: none;
+            display: inline;
+            padding: 0;
+            /* height: 200px;
+            width: 200px; */
+            display: block;
+            /* 处理块元素中的空白符和换行  */
+            white-space: nowrap;
+        }
+        .slide{
+            display: inline;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <ul class="slides">
+            <li class="slide"><img src="images/IMG_1078.JPG"></li>
+            <li class="slide"><img src="images/IMG_1079.JPG"></li>
+            <li class="slide"><img src="images/IMG_1080.JPG"></li>
+            <li class="slide"><img src="images/IMG_1081.JPG"></li>
+
+            <!-- <li class="slide"><img src="images/IMG_1079.JPG"></li>
+            <li class="slide"><img src="images/IMG_1078.JPG"></li>
+            <li class="slide"><img src="images/IMG_1081.JPG"></li>
+            <li class="slide"><img src="images/IMG_1080.JPG"></li> -->
+        </ul>
+    </div>
+</main>
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(function(){
+        // 变量放在一起，不要分散在代码中
+        var $interval; //控制开始和停止
+        var pause = 3000;
+        var width = 200; //不需要px？
+        var currentSlide = 1;
+        var animateSpeed = 1000;
+
+        // 缓存DOM，只查找一次选择器（遍历一遍）
+        var $slider = $('.slider');
+        var $sliderContainer = $slider.find('.slides');
+        var $slides = $sliderContainer.find('.slide');
+
+        function startSlider(){
+            $interval = setInterval(function move(){
+            // 注意是ul的margin-left负数增加
+            // 注意animate函数三个参数：css动作，速度，回调（动效执行完毕停止判断函数）
+            $sliderContainer.animate({'margin-left': '-=' + width } , animateSpeed , function(){
+                //判断是否到最后一组了
+                currentSlide++;
+                if(currentSlide === $slides.length+1){
+                    currentSlide=1;
+                    $sliderContainer.css('margin-left',0)
+                }
+            })
+        },pause);
+        }
+        
+        function stopSlider(){
+            clearInterval($interval);
+        }
+
+        // 启动函数，在鼠标移入时停止
+        startSlider();
+        $slider.on('mouseenter',stopSlider).on('mouseleave',startSlider);
+    })
+</script>
+</html>

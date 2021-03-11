@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagicShop</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            color: white;
+            font-family:Arial, Helvetica, sans-serif;
+            background-image: url("images/chrismasback.png");
+            background-size: 100%;
+            background-position: center;
+        }
+        header{
+            color: white;
+            height: 300px;
+            font-size: 20px;
+            
+            /* 导航栏居中 */
+            text-align: center;
+            /* background-repeat: no-repeat; */
+             
+        }
+        nav{
+            display: inline-block;
+            padding: 20px;
+            /* text-align: center; */
+            /* margin: 0 auto; */
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            display: inline-block;
+            padding: 90px 30px 0 0;
+        }
+        header .logo{
+            /* background-color: blue; */
+            background-image: url("images/chrismas.png");
+            display: inline-block;
+            height: 200px;
+            width: 200px;
+            text-indent: -999999px;
+            background-size: 200px;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+            top: -40px
+        }
+        header .mobile{
+            display: none;
+        }
+        /* RESPONSEIVE RULES */
+        @media screen and (max-width: 700px)
+        {
+            header .mobile{
+                display: inline;
+            }
+            header .desktop{
+                display: none;
+            }
+            li{
+                padding: 20px 30px 0 0;
+            }
+            .logo{
+                padding-top: 100px;
+            }
+        }
+        .features{
+            height: 300px;
+            display: flex;
+            /* margin-left: 20px; */
+            /* 自动设置换行 */
+            flex-wrap: wrap;
+        }
+
+        .features figure{
+            width: 150px;
+            text-align: center;
+            margin: auto;
+            text-transform: uppercase;
+        }
+        
+        .features figure img{
+            display: inline-block;
+            width: 150px;
+            background-color: rgb(135, 168, 135);
+            /* 圆形 */
+            border-radius: 50%;
+            /* 模糊边界 */
+            box-shadow: rgb(52, 59, 90) 0 0 10px;
+            border: rgb(37, 49, 73) solid 3px;
+        }
+        footer{
+            background:rgba(58, 75, 109, 0.76);
+            height: 40px;
+            text-align: center;
+        }
+        footer h5 , h3{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Menu</li>
+                <li class="mobile">Location</li>
+                <li class="mobile">Contact</li>
+                <li class="logo">BangTanBannerLogo</li>
+                <li class="desktop">Location</li>
+                <li class="desktop">Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <section class="features">
+        <figure>
+            <img src="images/IMG_1532.JPG" alt="金南俊">
+            <figcaption>rm</figcaption>
+        </figure>
+        <figure>
+            <img src="images/IMG_1533.JPG" alt="金硕珍">
+            <figcaption>jin</figcaption>
+        </figure>
+        <figure>
+            <img src="images/IMG_9541.jpg" alt="金泰亨">
+            <figcaption>v</figcaption>
+        </figure>
+    </section>
+    <footer>
+        <h3>young forever</h3>
+        <h5>@BTS</h5>
+    </footer>
+    <script src="indexscript.js"></script>
+</body>
+</html>

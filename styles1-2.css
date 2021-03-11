@@ -1,0 +1,104 @@
+body{
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* HEADER */
+header{
+    background-image: url("../images/backgroundpink.png");
+    height: 150px;
+    padding:20px;
+    font-size: 20px;
+    text-align: center;
+}
+/* HEADER */
+header nav{
+    margin-top: 80px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+li{
+    display: inline-block;
+    margin: 0 20px 0 0;
+}
+header .logo {
+    background-image: url("../images/drinkslogo.png");
+    background-size: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* 上移一定要先调相对位置 */
+    position: relative;
+    top:-70px;
+    display: inline-block;
+    width: 150px;
+    /* 图片高度150 上移70 */
+    height: 150px;
+    text-indent: -9999999999px;
+}
+header .mobile{
+    display: none;
+}
+
+@media screen and (max-width: 580px)
+        {
+            header .mobile{
+                display: inline-block;
+            }
+            header .desktop{
+                display: none;
+            }
+            li{
+                padding: 20px 30px 0 0;
+            }
+            .logo{
+                padding-top: -10px;
+                display: block;
+            }
+        }
+/* SECTION */
+.onesection{
+    background: rgb(228, 207, 202);
+    height: 80px;
+    padding: 20px;
+    text-align: center;
+}
+.onesection div img{
+    width: 400px;
+    padding: 0px;
+    text-align: center;
+}
+.twosection{
+    background: rgb(190, 175, 171);
+    height: 600px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.twosection figure{
+    width: 150px;
+    height: 150px;
+}
+.twosection figure img{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    /* 让图片在容器里居中 */
+    object-fit: cover;
+    /* 圆形图片 */
+    border-radius: 50%;
+    box-shadow:rgb(206, 189, 184) 0 0 10px;
+    border:2px solid rgb(146, 132, 129);
+}
+.twosection figure figcaption{
+    text-align: center;
+}
+footer{
+    background: rgb(206, 189, 184);
+    height: 50px;
+    text-align: center;
+    padding-top: 30px;
+}

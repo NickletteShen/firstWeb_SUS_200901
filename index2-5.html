@@ -1,0 +1,69 @@
+<!-- 更改待办事件内容 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更改待办事件内容</title>
+    <style>
+        input{
+            display: none;
+        }
+        /* 当处于编辑模式时，span隐藏，input出现 */
+        .edit span{
+            display: none;
+        }
+        .edit input{
+            display: initial;
+        }
+    </style>
+</head>
+<body>
+    <main>CheckList</main>
+    <ul id="checkList">
+        <li>
+            <span>Apple</span>
+            <input value="Apple"/>
+        </li>
+        <li>
+            <span>MK</span>
+            <input value="MK"/>
+        </li>
+        <li>
+            <span>JK</span>
+            <input value="JK"/>
+        </li>
+        <li>
+            <span>UnderSun</span>
+            <input value="UnderSun"/>
+        </li>
+    </ul>
+</body>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(function(){
+        $('#checkList li').click(editItem)
+        function editItem(){
+            $(this).addClass('edit')
+            $('.edit input').select()
+            $('.edit input').focus()
+        }
+        // 为什呢用$('.edit input')不行，$('input')可以？？？
+        $('input').on('blur',updateItem)
+        function updateItem(){ 
+            // input上一个span的值设为已输入的值
+            $(this).prev().html(($('.edit input').val()))
+            // 去掉input上层li的class
+            $(this).parent().removeClass('edit')
+            console.log($(this).prev().html())
+        }
+        //监听键盘按下回车事件
+        $('input').keypress(function(event){
+            if(event.which===13){
+                updateItem.call(this)
+            }
+        })
+    })
+</script>
+</html>

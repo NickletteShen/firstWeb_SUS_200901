@@ -1,0 +1,36 @@
+<!-- ToDoList 和 Javascript -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <style>
+        .checklist{
+            list-style-type: none;
+        }
+        .done{
+            text-decoration:line-through;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <main>
+            <p>Paragraph</p>
+            <p class="second">Paragraph Second</p>
+            <h4>List</h4>
+            <ul class='checklist'>
+                <li>Apple</li>
+                <li class="done">Orange</li>
+                <li>Banana</li>
+                <li>Watermelon</li>
+            </ul>
+        </main>
+    </header>
+</body>
+<script>
+    var a = document.getElementsByClassName("second");
+    a.className="new"
+</script>
+</html>
