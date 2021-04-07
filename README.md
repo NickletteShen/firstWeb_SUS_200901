@@ -3,23 +3,25 @@
 
 @(Nicklette)[面经|文章|leecode]
 
-**Marxico** is a delicate Markdown editor for Evernote. With reliable storage and sync powered by Evernote, **Marxico** offers greate writing experience. 
+**最近更新** 21.04.07
 
-- **Versatile** - supporting code highlight, *LaTeX* & flow charts,  inserting images & attachments by all means.
-- **Exquisite** -  neat but powerful editor, featuring offline docs, live preview, and offering the [desktop client][1] and offline [Chrome App][2].
-- **Sophisticated** - deeply integrated with Evernote, supporting notebook & tags, two-way bind editing.   
+- **JS** - 异步.
+- **CSS** - 垂直水平居中.
+- **网络** - 三次握手，四次挥手；状态码.   
+- **React** - 生命周期. 
+- **编程** - . 
 
 ----------
 
 [TOC]
 
 ## JS基础
-
+### 闭包
 > Markdown is a plain text formatting syntax designed to be converted to HTML. Markdown is popularly used as format for readme files, ... or in text editors for the quick creation of rich text documents.  - [Wikipedia](http://en.wikipedia.org/wiki/Markdown)
 
 As showed in this manual, it uses hash(#) to identify headings, emphasizes some text to be **bold** or *italic*. You can insert a [link](http://www.example.com) , or a footnote[^demo]. Serveral advanced syntax are listed below, please press `Ctrl + /` to view Markdown cheatsheet.
 
-### CSS世界
+## CSS世界
 ``` python
 @requires_authorization
 def somefunc(param1='', param2=0):
@@ -33,9 +35,9 @@ class SomeClass:
 ... prompt'''
 ```
 
-### 浏览器/网络
+## 浏览器/网络
 
-### 框架React
+## 框架React
 
 
-### 编程算法题
+## 编程算法题
